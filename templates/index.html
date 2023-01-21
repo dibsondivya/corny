@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700;800&display=swap');
+
+:root{
+	--dark:  #000;
+	--white:  fff;
+	--grey:  #f6f6f6;
+	--shadow:  #ccc;
+	--lightgrey:  #f9f9f9;
+	--usercolor: #333
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	background: var(--white);
+}
+
+#edit{
+	position: fixed;
+	bottom: 10;
+	left: 10;
+	box-shadow: -4px 4px var(--dark);
+	border: 2px solid var(--dark);
+	border-radius: 5px;
+	padding: 8px;
+	background: white;
+	display: none;
+}
+
+#edit:hover{
+	box-shadow: -2.5px 2.5px var(--dark);
+	transform: translate(-1.5px);
+}
+
+#edit a:hover{
+	font-weight: 500;
+	text-decoration: none;
+}
+
+#main{
+  width:  60%;
+  margin-left: 20%;
+  margin-top: 2%;
+  transition: filter 0.6s;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+button{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+}
+
+#title{
+	width: 80%;
+	margin-left: 10%;
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 60px;
+	text-align: center;
+}
+
+#back{
+	margin-bottom: -40px;
+}
+
+#back button {
+	box-shadow: -3px 3px var(--dark);
+	border: 2px solid var(--dark);
+	color: var(--dark);
+	background: white;
+	border-radius: 5px;
+}
+
+#back button:hover{
+	 box-shadow: -2px 2px var(--dark);
+	 transform: translate(-1px);
+}
+
+#back button:active{
+	 box-shadow: -1px 1px var(--dark);
+	 transform: translate(-1px);
+}
+.thing {
+	width:  80%;
+	border-radius: 5px;
+	margin: 40px 0px 0px calc(10% - 10px);
+	padding:  20px;
+	font-size: 20px;
+	box-shadow: -5px 5px 0px 0px var(--dark);
+	background-color: var(--white);
+	border:  2px solid #000;
+	position: relative;
+	transition: width 0.5s, margin 0.5s;
+	}
+
+.thing:hover{
+   width:  81%;
+   margin: 40px 0px 0px calc(9.5% - 7px);
+
+}
+
+.progressBar{
+   width:  50%;
+   border-radius: 8px;
+	border:  2px inset var(--dark);
+	height:  30px;
+	margin-top: 20px;
+	 display: inline-block;
+	 padding-right: 3px;
+	 background: var(--white);
+	 box-shadow: -4.5px 5px inset var(--dark);
+}
+
+.progressFilled{	
+   border-radius: 6px 8px 2px 5px;
+	 	height:  27px;
+	background: var(--usercolor);
+	border-left: 1px solid var(--dark);
+	border-top: 3.5px solid var(--dark);
+	border-right: 1px solid var(--dark);	
+    transition: width 0.4s;
+}
+
+.plus{
+	height: 34px;
+  width:  34px;
+  background: #fff;
+	 color: var(--dark);
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: top;
+  margin:  18px 0px 0px 5px;
+  box-shadow: -3px 3px var(--dark);
+  line-height: 28px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid var(--dark);
+  font-weight: 600;
+  padding: 0px
+  }
+
+.plus:hover{
+	 box-shadow: -2px 2px var(--dark);
+	 transform: translate(-1px);
+}
+
+.plus:active{
+	 box-shadow: -1px 1px var(--dark);
+	 transform: translate(-1px);
+}
+
+#addNew{	
+	position: fixed;
+	right: 10px;
+	bottom:  10px;
+	width: fit-content;
+}
+
+#button{
+	width:  40px;
+	height:  40px;
+	border-radius: 10px;
+	padding: none;
+	background: var(--usercolor);
+	box-shadow:4px 4px var(--dark);
+	border: 2px solid var(--dark);
+	color: var(--dark);
+	font-size: 40px;
+	line-height: 36px;
+	text-align: center;
+	font-weight: 600;
+	float: right;
+	transition: box-shadow 0.5s, transform 0.5s;
+	display: none;
+}
+
+#popup{
+	position: fixed;
+	margin-left: 40%;
+	top: 40%;
+	border: 3px solid black;
+	width: 20%;
+	height: fit-content;
+	display: none;
+	padding: 20px;
+	text-align: center;
+	background: white;
+	border-radius: 8px;
+}
+
+#popup button{
+	width: 40%;
+	padding: 4px;
+	color: white;
+   background: var(--dark);
+}
+
+#button:hover{
+	box-shadow:2px 2px var(--dark);
+	transform: translate(2px);
+}
+
+#createNew button{
+	width:  42%;
+   padding:  10px;
+   margin-left: 5%;
+   background: white;
+   color: var(--dark);
+   border-radius: 8px;
+    box-shadow: 2px 2px #fff;
+}
+
+#createNew button:hover{
+	box-shadow: 1px 1px #fff;
+	transform: translate(1px);
+}
+
+#newName{
+	width: 92%;
+	height: 40px;
+	padding: 4px;
+	padding-left: 10px;
+  border: 2ps solid var(--dark);
+  border-radius: 8px;
+  display: block;
+  margin: 10px 5% 15px 4%;
+  font-size: 18px;
+
+}
+
+#createNew{
+	display: none;
+	width:  250px;
+	padding: 15px;
+	background: var(--dark);
+	border-radius: 8px;
+	box-shadow: 5px 5px var(--dark);
+	border: 1px solid white;
+		margin-bottom:  5px;
+	margin-right: 5px;
+	transition: display 1s;
+}
+
+.cross{
+	width:  20px;
+	height:  10px;
+	font-weight: 600;
+	position: absolute;
+	top: 12;
+	right: 7;
+	text-align: center;
+	line-height: 10px;
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.link{
+width:  200px;
+height: 14px;
+	padding-top: 80px;
+	font-weight: 400;
+	font-size: 14px;
+	position: absolute;
+	bottom: 8;
+	right: 10;
+	text-align: right;
+	line-height: 10px;
+	 user-select: none;
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;  
+
+}
+
+a{
+	
+	text-decoration: underline;
+	font-weight: 400;
+	color: black;
+}
+
+a:hover{
+	font-weight: 600;
+	color: black;
+
+}
+
+.thingName{
+	font-size: 18px;
+	width: 90%;
+}
+
+.thingName b{
+	font-size: 20px;
+}
+
+
+#board{
+	width:  65%;
+	text-align: center;
+	font-size: 30px;
+	margin-top:  5px;
+	margin-left: 17.5%;
+	height:  auto;
+}
+
+
+.emptyThing{
+	width: 8%;
+	margin: 0.2%;
+	padding-bottom: 8.5%;
+	display: inline-block;
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    box-sizing: border-box;
+    box-shadow: -3px 3px 0px var(--dark);
+     background: linear-gradient(to bottom, white 50%, var(--usercolor) 50%);
+    background-size: 100% 200%;
+    background-position:right top;  
+    transition:all 0.35s ease;}
+
+.fullThing{
+	width: 8%;
+	margin: 0.2%;
+	padding-bottom: 8.5%;
+	background: var(--usercolor);
+	display: inline-block;
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    box-sizing: border-box;
+    box-shadow: -3px 3px 0px var(--dark);
+	position: relative;
+	background: linear-gradient(to bottom, var(--usercolor) 50%, white 50%);
+    background-size: 100% 200%;
+    background-position:right top;  
+    transition:all 0.35s ease;
+
+}
+
+
+a{
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: 400;
+	color: var(--dark);
+}
+
+a:hover{
+	text-decoration: underline;
+	color: var(--dark);
+
+}
+
+#subtract{
+	position: absolute;
+	top: 0;
+	right:  -15;
+	font-weight: 400;
+	 border-radius: 5px;
+	 border: 2px solid black;
+    box-shadow: -4px 4px black;
+	padding: 5px 10px;
+	color: black;
+	text-align: center;
+	background: var(--usercolor);
+	font-weight: 800;
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+#subtract:hover {
+ box-shadow: -2px 2px var(--dark);
+	 transform: translate(-1px);
+}
+
+#subtract:active {
+	 box-shadow: -1px 1px var(--dark);
+	 transform: translate(-1px);
+}
+
+#name{
+	display: inline-block;
+	font-weight: 600;
+	width: fit-content;
+}
+
+#progress{
+	display: inline-block;
+	font-weight: 400;
+	width: fit-content;
+}
+
+.note{
+	width: 400%;
+	display: none;
+	height: 300%;
+	margin: 40% 0% 0% 10%;
+	position: absolute;
+    padding: none;
+	border-radius: 0px 8px 8px 8px;
+	z-index: 10;
+	border: 2px solid black;
+	background: var(--grey);
+}
+
+@media only screen and (max-device-width:1040px){
+
+#main{
+	  width: 80%;	
+  margin-left: 10%;
+  margin-top: 7%;
+  transition: filter 0.6s;
+  position: relative;
+}
+
+#board{
+	width: 100%;
+	margin-left: 0%;
+	margin-top: 50px
+}
+
+}
+
+@media only screen and (max-device-width:830px){
+#main{
+	 width: 65%;	
+  margin-left: 17.5%;
+  margin-top: 7%;
+  transition: filter 0.6s;
+  position: relative;
+}
+
+#button{
+	width: 60px;
+	height: 60px;
+	font-size: 50px;
+	line-height: 50px;
+	
+}
+
+#addNew{
+    width: 50%;	
+	bottom: 20;
+	right: 20;
+}
+
+#edit{
+	bottom: 20;
+	left: 20;
+}
+
+#createNew{
+	width: 90%;
+}
+
+#createNew button{
+	padding: 20px;
+	font-size: 24px;
+}
+
+#newName{
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+}
+
+#popup{
+	width: 60%;
+	margin-left: calc(20% - 40px);
+	font-size: 24px;
+	padding: 30px;
+	bottom: 50%
+}
+
+#popup button{
+	padding: 15px;
+	font-size: 22px;	
+}
+
+#title{
+	margin-top: 180px
+}
+
+}
+
+@media only screen and (max-device-width:425px){
+
+#edit{
+	top: 15;
+	left: 85%;
+	width: fit-content;
+	height: fit-content;
+	position: absolute
+}
+
+.note{
+	width: 300%;
+	height: 250%;
+	font-size: 18px
+}
+
+#board{
+	width: 100%;
+	margin-left: 0%;
+}
+
+#button{
+	width: 70px;
+	height: 70px;
+	box-shadow: 6px 6px black;
+	border: 2px solid black;
+	font-size: 50px;
+	line-height: 60px;
+	
+	
+}
+
+.progressFilled{
+	height: 47px;
+	border-radius: 10px;
+}
+.progressBar{
+	height: 50px;
+	border-radius: 12px;
+	margin-top: 30px;
+	}
+
+.link a{
+	font-size: 24px;
+    user-select: none;
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none; 
+
+}
+
+.link{
+	height: 24px;
+	width: 210px;
+    padding-top: 80px;
+	bottom: 5;
+	user-select: none;
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;  
+}
+
+#main{
+		margin-top: 10vh;
+		width: 90%;	
+  margin-left: 5%;
+	}
+
+#popup{	
+	bottom: 50%;
+}
+
+.thingName b {
+font-size: 28px;
+}
+
+.thingName span{
+		font-size: 22px;
+}
+#title{
+	font-size: 35px;
+	margin-top: 60px;
+}
+
+.thing{
+	padding: 40px;
+	margin-left: calc(10% - 37px);
+	margin-top: 60px;
+}
+
+.thing:hover{
+   width:  81%;
+   margin: 60px 0px 0px calc(9.5% - 37px);
+
+}
+
+#board{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#back{
+	margin-bottom: 0px;
+	
+}
+
+#back button{
+font-size: 24px;
+}
+
+#subtract{
+	font-size: 24px;
+}
+
+.plus{
+	height: 52px;
+	width: 52px;
+	line-height: 50px;
+	font-size: 20px;
+	box-shadow: -4px 5px black;
+	margin-top: 28px;
+	border-radius: 12px;
+}
+
+.plus:hover{
+	box-shadow: -3px 3px black;
+	transform: translate(-2px);
+}
+
+.cross{
+	font-size: 32px;
+	top: 17;
+	right: 12;
+	padding-left: 70px;
+	padding-bottom: 40px
+}
+
+}
+    </style>
+    <script>
+        window.onload = function() {
+          var context = new AudioContext();
+        }
+        </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!--audio controls autoplay muted src="welcometotheinternet.mp3"></audio-->
+    <!--iframe src="silence.mp3" allow="autoplay" id="audio" hidden ></iframe-->
+    <!--audio id="player" controls autoplay muted >
+        <source src="Untitled.ogg" type="audio/ogg">
+        <source src="welcometotheinternet.mp3" type="audio/mp3">
+    </audio-->
+    <img id="welcomeimg" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F000%2F221%2F156%2Fwelcome-to-internet.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"/>
+
+    <main id="main" style="filter: none; pointer-events: auto; display:none;">
+        <h1 id="title" style="display: inline-block;">welcome</h1>
+    </main>
+
+    <div id="things" style="display:none">
+        <img id="rxngif" style="display: none; width: 40%; position: absolute; z-index: 1;" src="https://media.tenor.com/pNFqGBftNHEAAAAM/nick-confused.gif"/>
+        <img id="rxngif2_correct" style="display: none; width: 40%;  z-index: 1;" src="https://i.pinimg.com/originals/5c/55/e6/5c55e6eaede1d8d94d4ea0890d27ccea.gif"/>
+        <img id="rxngif2" style="display: none; width: 40%;  z-index: 1;" src="https://media.tenor.com/wAJE5rch0-cAAAAM/no-no-no-spider-man.gif"/>
+        <img id="rxngif3" style="display: none; width: 40%;  z-index: 1;" src="https://i.imgflip.com/6rtdc7.gif"/>
+        <img id="rxngif4" style="display: none; width: 100%;  z-index: 1;" src="https://thumbs.dreamstime.com/b/corn-wall-yellow-natural-memory-green-field-34209187.jpg"/>
+        <img id="rxngif5" style="display: none; width: 40%;  z-index: 1;" src="https://media.tenor.com/Gqy4WGxrMv0AAAAM/try-again.gif"/>
+
+        <div class="thing" id="firstqn">
+            <div class="thingName">
+                <b>Qn 1 of 3: How many letters are in the alphabet?</b>
+            </div>
+            <div class="answers">
+                <button id="question1option1" class="plus">24</button>
+                <button id="question1option2" class="plus">26</button>
+                <button id="question1option3" class="plus">28</button>
+            </div>
+        </div>
+
+        <div class="thing" id="secondqn" style="display: none;">
+            <div class="thingName">
+                <b>Qn 2 of 3: Who sings as an "Angel of Music"?</b>
+            </div>
+            <div class="answers">
+                <button id="question2option1" style="height: 100px; width: 100px;" class="plus">Erik</button>
+                <button id="question2option2" style="height: 100px; width: 100px;" class="plus">Raoul</button>
+                <button id="question2option3"  style="height: 100px; width: 100px;" class="plus">Piangi</button>
+            </div>
+        </div>
+
+        <div class="thing" id="thirdqn" style="display: none;">
+            <div class="thingName">
+                <b>Qn 3 of 3: Choose a color.</b>
+            </div>
+            <div class="answers">
+                <button id="question3option1" style="height: 100px; width: 100px; background-color: cornflowerblue;" class="plus"></button>
+                <button id="question3option2" style="height: 100px; width: 100px;  background-color: lightgrey;" class="plus"></button>
+                <button id="question3option3"  style="height: 100px; width: 100px;  background-color: orange;" class="plus"></button>
+            </div>
+        </div>
+
+        <div id="firstresponse" style="display:none; z-index: 1;">
+            <h1 style="z-index: 1; color: cornflowerblue; font-size: 24;">its cornflower blue</h1>
+        </div>
+
+        <div id="response" style="display:none; z-index: 1;">
+            <h1 style="z-index: 1; color: cornsilk; font-size: 100px;">ENJOY CORNWALL</h1>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+    $.fn.center = function () {
+        this.css("position","absolute");
+        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+        return this;
+      }
+
+    setTimeout(function(){
+        $("#welcomeimg").fadeOut()
+    }, 1000);
+    $("#main").delay(2000).fadeIn(0);
+
+    $("#things").delay(3000).fadeIn(0);
+    
+
+    $("#question1option1").click(function(){
+    $("#rxngif").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif").fadeOut()
+        }, 1000);
+  });
+            
+  $("#question1option2").click(function(){
+    $("#firstqn").hide();
+    $("#secondqn").show();
+  });
+
+  $("#question1option3").click(function(){
+    $("#rxngif").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif").fadeOut()
+        }, 1000);
+  });
+
+  $("#question2option1").click(function(){
+    $("#secondqn").hide();
+    $("#rxngif2_correct").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif2_correct").fadeOut()
+        }, 1500);
+    $("#thirdqn").delay(2000).fadeIn(0);
+  });
+
+  $("#question2option2").click(function(){
+    $("#rxngif2").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif2").fadeOut()
+        }, 1300);
+  });
+
+  $("#question2option3").click(function(){
+    $("#rxngif2").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif2").fadeOut()
+        }, 1300);
+  });
+
+  $("#question3option1").click(function(){
+    $("#thirdqn").hide();
+    $("#main").hide();
+    $("#firstresponse").fadeIn().center();
+    setTimeout(function(){
+          $("#firstresponse").fadeOut()
+        }, 2000);
+    $("#rxngif3").delay(2000).fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif3").fadeOut()
+        }, 3900);
+    $("#rxngif4").delay(4000).fadeIn(0).center();
+    $("#response").delay(4500).fadeIn(0).center();
+  });
+
+  $("#question3option2").click(function(){
+    $("#rxngif5").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif5").fadeOut()
+        }, 1000);
+  });
+
+  $("#question3option3").click(function(){
+    $("#rxngif5").fadeIn().center();
+        setTimeout(function(){
+          $("#rxngif5").fadeOut()
+        }, 1000);
+  });
+
+
+});
+    </script>
+
+</body>
+</html>
