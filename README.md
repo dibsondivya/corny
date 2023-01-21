@@ -11,3 +11,6 @@ Corny interactive 3 question quiz website, meme-ified. Access it here at [corny]
 * jQuery for interactivity
 * css (credits to [Do100Things](https://do100things.com))
 * html
+
+# Unfortunates
+* Failed to get audio to autoplay on page upon open
