@@ -22,28 +22,6 @@ body{
 	background: var(--white);
 }
 
-#edit{
-	position: fixed;
-	bottom: 10;
-	left: 10;
-	box-shadow: -4px 4px var(--dark);
-	border: 2px solid var(--dark);
-	border-radius: 5px;
-	padding: 8px;
-	background: white;
-	display: none;
-}
-
-#edit:hover{
-	box-shadow: -2.5px 2.5px var(--dark);
-	transform: translate(-1.5px);
-}
-
-#edit a:hover{
-	font-weight: 500;
-	text-decoration: none;
-}
-
 #main{
   width:  60%;
   margin-left: 20%;
@@ -68,27 +46,31 @@ button{
 	text-align: center;
 }
 
-#back{
-	margin-bottom: -40px;
+#welcomeimg{
+    width: 50%;
+    padding-top: 10px;
 }
 
-#back button {
-	box-shadow: -3px 3px var(--dark);
-	border: 2px solid var(--dark);
-	color: var(--dark);
-	background: white;
-	border-radius: 5px;
+#rxngif2{
+    width: 40%;
+}
+#rxngif2_correct{
+    width: 40%;
 }
 
-#back button:hover{
-	 box-shadow: -2px 2px var(--dark);
-	 transform: translate(-1px);
+#rxngif3{
+    width: 40%;
 }
 
-#back button:active{
-	 box-shadow: -1px 1px var(--dark);
-	 transform: translate(-1px);
+
+#rxngif5{
+    width: 40%;
 }
+
+#response h1{
+    font-size: 100px;
+}
+
 .thing {
 	width:  80%;
 	border-radius: 5px;
@@ -106,28 +88,6 @@ button{
    width:  81%;
    margin: 40px 0px 0px calc(9.5% - 7px);
 
-}
-
-.progressBar{
-   width:  50%;
-   border-radius: 8px;
-	border:  2px inset var(--dark);
-	height:  30px;
-	margin-top: 20px;
-	 display: inline-block;
-	 padding-right: 3px;
-	 background: var(--white);
-	 box-shadow: -4.5px 5px inset var(--dark);
-}
-
-.progressFilled{	
-   border-radius: 6px 8px 2px 5px;
-	 	height:  27px;
-	background: var(--usercolor);
-	border-left: 1px solid var(--dark);
-	border-top: 3.5px solid var(--dark);
-	border-right: 1px solid var(--dark);	
-    transition: width 0.4s;
 }
 
 .plus{
@@ -158,13 +118,6 @@ button{
 	 transform: translate(-1px);
 }
 
-#addNew{	
-	position: fixed;
-	right: 10px;
-	bottom:  10px;
-	width: fit-content;
-}
-
 #button{
 	width:  40px;
 	height:  40px;
@@ -183,105 +136,11 @@ button{
 	display: none;
 }
 
-#popup{
-	position: fixed;
-	margin-left: 40%;
-	top: 40%;
-	border: 3px solid black;
-	width: 20%;
-	height: fit-content;
-	display: none;
-	padding: 20px;
-	text-align: center;
-	background: white;
-	border-radius: 8px;
-}
-
-#popup button{
-	width: 40%;
-	padding: 4px;
-	color: white;
-   background: var(--dark);
-}
-
 #button:hover{
 	box-shadow:2px 2px var(--dark);
 	transform: translate(2px);
 }
 
-#createNew button{
-	width:  42%;
-   padding:  10px;
-   margin-left: 5%;
-   background: white;
-   color: var(--dark);
-   border-radius: 8px;
-    box-shadow: 2px 2px #fff;
-}
-
-#createNew button:hover{
-	box-shadow: 1px 1px #fff;
-	transform: translate(1px);
-}
-
-#newName{
-	width: 92%;
-	height: 40px;
-	padding: 4px;
-	padding-left: 10px;
-  border: 2ps solid var(--dark);
-  border-radius: 8px;
-  display: block;
-  margin: 10px 5% 15px 4%;
-  font-size: 18px;
-
-}
-
-#createNew{
-	display: none;
-	width:  250px;
-	padding: 15px;
-	background: var(--dark);
-	border-radius: 8px;
-	box-shadow: 5px 5px var(--dark);
-	border: 1px solid white;
-		margin-bottom:  5px;
-	margin-right: 5px;
-	transition: display 1s;
-}
-
-.cross{
-	width:  20px;
-	height:  10px;
-	font-weight: 600;
-	position: absolute;
-	top: 12;
-	right: 7;
-	text-align: center;
-	line-height: 10px;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-}
-
-.link{
-width:  200px;
-height: 14px;
-	padding-top: 80px;
-	font-weight: 400;
-	font-size: 14px;
-	position: absolute;
-	bottom: 8;
-	right: 10;
-	text-align: right;
-	line-height: 10px;
-	 user-select: none;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;  
-
-}
 
 a{
 	
@@ -306,116 +165,6 @@ a:hover{
 }
 
 
-#board{
-	width:  65%;
-	text-align: center;
-	font-size: 30px;
-	margin-top:  5px;
-	margin-left: 17.5%;
-	height:  auto;
-}
-
-
-.emptyThing{
-	width: 8%;
-	margin: 0.2%;
-	padding-bottom: 8.5%;
-	display: inline-block;
-    border-radius: 5px;
-    border: 1px solid var(--dark);
-    box-sizing: border-box;
-    box-shadow: -3px 3px 0px var(--dark);
-     background: linear-gradient(to bottom, white 50%, var(--usercolor) 50%);
-    background-size: 100% 200%;
-    background-position:right top;  
-    transition:all 0.35s ease;}
-
-.fullThing{
-	width: 8%;
-	margin: 0.2%;
-	padding-bottom: 8.5%;
-	background: var(--usercolor);
-	display: inline-block;
-    border-radius: 5px;
-    border: 1px solid var(--dark);
-    box-sizing: border-box;
-    box-shadow: -3px 3px 0px var(--dark);
-	position: relative;
-	background: linear-gradient(to bottom, var(--usercolor) 50%, white 50%);
-    background-size: 100% 200%;
-    background-position:right top;  
-    transition:all 0.35s ease;
-
-}
-
-
-a{
-	font-size: 16px;
-	text-decoration: none;
-	font-weight: 400;
-	color: var(--dark);
-}
-
-a:hover{
-	text-decoration: underline;
-	color: var(--dark);
-
-}
-
-#subtract{
-	position: absolute;
-	top: 0;
-	right:  -15;
-	font-weight: 400;
-	 border-radius: 5px;
-	 border: 2px solid black;
-    box-shadow: -4px 4px black;
-	padding: 5px 10px;
-	color: black;
-	text-align: center;
-	background: var(--usercolor);
-	font-weight: 800;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-}
-
-#subtract:hover {
- box-shadow: -2px 2px var(--dark);
-	 transform: translate(-1px);
-}
-
-#subtract:active {
-	 box-shadow: -1px 1px var(--dark);
-	 transform: translate(-1px);
-}
-
-#name{
-	display: inline-block;
-	font-weight: 600;
-	width: fit-content;
-}
-
-#progress{
-	display: inline-block;
-	font-weight: 400;
-	width: fit-content;
-}
-
-.note{
-	width: 400%;
-	display: none;
-	height: 300%;
-	margin: 40% 0% 0% 10%;
-	position: absolute;
-    padding: none;
-	border-radius: 0px 8px 8px 8px;
-	z-index: 10;
-	border: 2px solid black;
-	background: var(--grey);
-}
-
 @media only screen and (max-device-width:1040px){
 
 #main{
@@ -426,15 +175,10 @@ a:hover{
   position: relative;
 }
 
-#board{
-	width: 100%;
-	margin-left: 0%;
-	margin-top: 50px
 }
 
-}
 
-@media only screen and (max-device-width:830px){
+@media only screen and (max-device-width:768px){ 
 #main{
 	 width: 65%;	
   margin-left: 17.5%;
@@ -451,70 +195,17 @@ a:hover{
 	
 }
 
-#addNew{
-    width: 50%;	
-	bottom: 20;
-	right: 20;
-}
-
-#edit{
-	bottom: 20;
-	left: 20;
-}
-
-#createNew{
-	width: 90%;
-}
-
-#createNew button{
-	padding: 20px;
-	font-size: 24px;
-}
-
-#newName{
-	height: 60px;
-	line-height: 60px;
-	font-size: 24px;
-}
-
-#popup{
-	width: 60%;
-	margin-left: calc(20% - 40px);
-	font-size: 24px;
-	padding: 30px;
-	bottom: 50%
-}
-
-#popup button{
-	padding: 15px;
-	font-size: 22px;	
-}
-
 #title{
 	margin-top: 180px
 }
 
 }
 
-@media only screen and (max-device-width:425px){
+@media only screen and (max-device-width:450px){
 
-#edit{
-	top: 15;
-	left: 85%;
-	width: fit-content;
-	height: fit-content;
-	position: absolute
-}
-
-.note{
-	width: 300%;
-	height: 250%;
-	font-size: 18px
-}
-
-#board{
-	width: 100%;
-	margin-left: 0%;
+#welcomeimg{
+    width: 100%;
+    padding-top: 10px;
 }
 
 #button{
@@ -528,34 +219,29 @@ a:hover{
 	
 }
 
-.progressFilled{
-	height: 47px;
-	border-radius: 10px;
-}
-.progressBar{
-	height: 50px;
-	border-radius: 12px;
-	margin-top: 30px;
-	}
-
-.link a{
-	font-size: 24px;
-    user-select: none;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none; 
-
+#rxngif2{
+    width: 60%;
 }
 
-.link{
-	height: 24px;
-	width: 210px;
-    padding-top: 80px;
-	bottom: 5;
-	user-select: none;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;  
+#rxngif2_correct{
+    width: 80%;
+}
+
+#rxngif3{
+    width: 60%;
+}
+
+#rxngif4{
+    height: 100%;
+}
+
+#rxngif5{
+    width: 60%;
+}
+
+#response h1{
+    font-size: 50px;
+    text-align: center;
 }
 
 #main{
@@ -564,16 +250,12 @@ a:hover{
   margin-left: 5%;
 	}
 
-#popup{	
-	bottom: 50%;
-}
-
 .thingName b {
-font-size: 28px;
+font-size: 20px;
 }
 
 .thingName span{
-		font-size: 22px;
+		font-size: 20px;
 }
 #title{
 	font-size: 35px;
@@ -592,27 +274,11 @@ font-size: 28px;
 
 }
 
-#board{
-	width: 90%;
-	margin-left: 5%;
-}
-
-#back{
-	margin-bottom: 0px;
-	
-}
-
-#back button{
-font-size: 24px;
-}
-
-#subtract{
-	font-size: 24px;
-}
 
 .plus{
 	height: 52px;
 	width: 52px;
+    max-width: 30%;
 	line-height: 50px;
 	font-size: 20px;
 	box-shadow: -4px 5px black;
@@ -625,21 +291,10 @@ font-size: 24px;
 	transform: translate(-2px);
 }
 
-.cross{
-	font-size: 32px;
-	top: 17;
-	right: 12;
-	padding-left: 70px;
-	padding-bottom: 40px
-}
 
 }
     </style>
-    <script>
-        window.onload = function() {
-          var context = new AudioContext();
-        }
-        </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -651,7 +306,7 @@ font-size: 24px;
         <source src="Untitled.ogg" type="audio/ogg">
         <source src="welcometotheinternet.mp3" type="audio/mp3">
     </audio-->
-    <img id="welcomeimg" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F000%2F221%2F156%2Fwelcome-to-internet.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"/>
+    <img id="welcomeimg" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F000%2F221%2F156%2Fwelcome-to-internet.jpg" style="display: none;"/>
 
     <main id="main" style="filter: none; pointer-events: auto; display:none;">
         <h1 id="title" style="display: inline-block;">welcome</h1>
@@ -659,11 +314,11 @@ font-size: 24px;
 
     <div id="things" style="display:none">
         <img id="rxngif" style="display: none; width: 40%; position: absolute; z-index: 1;" src="https://media.tenor.com/pNFqGBftNHEAAAAM/nick-confused.gif"/>
-        <img id="rxngif2_correct" style="display: none; width: 40%;  z-index: 1;" src="https://i.pinimg.com/originals/5c/55/e6/5c55e6eaede1d8d94d4ea0890d27ccea.gif"/>
-        <img id="rxngif2" style="display: none; width: 40%;  z-index: 1;" src="https://media.tenor.com/wAJE5rch0-cAAAAM/no-no-no-spider-man.gif"/>
-        <img id="rxngif3" style="display: none; width: 40%;  z-index: 1;" src="https://i.imgflip.com/6rtdc7.gif"/>
+        <img id="rxngif2_correct" style="display: none; z-index: 1;" src="https://i.pinimg.com/originals/5c/55/e6/5c55e6eaede1d8d94d4ea0890d27ccea.gif"/>
+        <img id="rxngif2" style="display: none;  z-index: 1;" src="https://media.tenor.com/wAJE5rch0-cAAAAM/no-no-no-spider-man.gif"/>
+        <img id="rxngif3" style="display: none; z-index: 1;" src="https://i.imgflip.com/6rtdc7.gif"/>
         <img id="rxngif4" style="display: none; width: 100%;  z-index: 1;" src="https://thumbs.dreamstime.com/b/corn-wall-yellow-natural-memory-green-field-34209187.jpg"/>
-        <img id="rxngif5" style="display: none; width: 40%;  z-index: 1;" src="https://media.tenor.com/Gqy4WGxrMv0AAAAM/try-again.gif"/>
+        <img id="rxngif5" style="display: none;  z-index: 1;" src="https://media.tenor.com/Gqy4WGxrMv0AAAAM/try-again.gif"/>
 
         <div class="thing" id="firstqn">
             <div class="thingName">
@@ -703,7 +358,7 @@ font-size: 24px;
         </div>
 
         <div id="response" style="display:none; z-index: 1;">
-            <h1 style="z-index: 1; color: cornsilk; font-size: 100px;">ENJOY CORNWALL</h1>
+            <h1 style="z-index: 1; color: cornsilk;">ENJOY CORNWALL</h1>
         </div>
     </div>
     </div>
@@ -716,7 +371,8 @@ font-size: 24px;
         this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
         return this;
       }
-
+    
+    $("#welcomeimg").fadeIn().center();
     setTimeout(function(){
         $("#welcomeimg").fadeOut()
     }, 1000);
